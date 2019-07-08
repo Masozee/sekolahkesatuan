@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div class="headerabout">
+      <div class="caption">
+        <h4>LOREM IPSUM:</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur quis elit.</p>
+      </div>
+    </div>
+
+     <section class="py-4">
+      <div class="container borderspecial nopad" style="padding-bottom: 25px;">
+        <div class="row">
+          <div class="col-md-9 nopad">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-3 columnspecial text-right nopadleft">
+                      <label class="datespecial datenewsdetail">Sabtu, 01 Januari 2019</label>
+                    </div>
+                    <div class="col-md-9">
+                        <h5>Lorem ipsum dolor sit amet, consectetur quis elit Lorem ipsum dolor sit amet, consectetur quis elit Lorem ipsum dolor sit amet, consectetur quis elit.</h5><br><br>
+                        <p>
+                          {{berita.Isi |safe}}
+                        </p>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="stickycontent">
+            <div class="stickyimage" style="background: url('image/image2.jpg') no-repeat center;    background-size: cover;">
+              
+            </div>
+            <div class="stickytext">
+                Lorem Ipsum is simply dummy text 
+            </div>
+          </div>
+        </div>  
+        
+        </div>
+      </div>
+    </section>
+
+    <section class="bottomnews">
+      <div class="container">
+        <div class="row"> 
+          <div class="col-md-4 columnnews">
+              <div class="imgnewslist">
+                  <a onclick="lightbox(0)"><img src="image/gal4.jpg"></a>
+              </div>
+              <div class="imgnewslist">
+                  <a onclick="lightbox(1)"><img src="image/gal2.jpg"></a>
+              </div>
+          </div>
+          <div class="col-md-4 columnnews">
+              <div class="imgnewslist">
+                  <a onclick="lightbox(2)"><img src="image/gal3.jpg"></a>
+              </div>
+              <div class="imgnewslist">
+                  <a onclick="lightbox(3)"><img src="image/gal4.jpg"></a>
+              </div>
+          </div> 
+           <div class="col-md-4 columnnews">
+              <div class="imgnewslist">
+                  <a onclick="lightbox(4)"><img src="image/gal5.jpg"></a>
+              </div>
+              <div class="imgnewslist">
+                  <a onclick="lightbox(5)"><img src="image/gal2.jpg"></a>
+              </div>
+          </div>
+
+        </div>
+      </div> 
+    </section>
+
+    <!--lightbox-->
+    <div style="display:none;">
+        <div id="ninja-slider">
+            <div class="slider-inner">
+                <ul>
+                    <li>
+                        <a class="ns-img" href="image/gal4.jpg"></a>
+                        <div class="caption">
+                            <h3>Dummy Caption 1</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan purus.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="ns-img" href="image/gal3.jpg"></a>
+                        <div class="caption">
+                            <h3>Dummy Caption 2</h3>
+                            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet</p>
+                        </div>
+                    </li>
+                </ul>
+                <div id="fsBtn" class="fs-icon" title="Expand/Close"></div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ninja slider-->
+    <script src="js/ninjaslider/ninja-slider.js"></script>
+    <script>
+        function lightbox(idx) {
+           // alert("basyir");
+            var ninjaSldr = document.getElementById("ninja-slider");
+            ninjaSldr.parentNode.style.display = "block";
+
+            nslider.init(idx);
+
+            var fsBtn = document.getElementById("fsBtn");
+            fsBtn.click();
+        }
+
+        function fsIconClick(isFullscreen, ninjaSldr) { 
+            if (isFullscreen) {
+                ninjaSldr.parentNode.style.display = "none";
+            }
+        }
+    </script>
+
+
+    <script>
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+        document.getElementById("navbar").classList.add("stickynav");
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").classList.remove("stickynav");
+      }
+    }
+    </script>
+
+  </body>
+
+</html>

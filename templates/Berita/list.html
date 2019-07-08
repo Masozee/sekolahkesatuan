@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+  {% block content %}
+
+    <div class="headerabout">
+      <div class="caption">
+        <h4>LOREM IPSUM:</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur quis elit.</p>
+      </div>
+    </div>
+
+     <section class="py-5">
+      <div class="container">
+        <div class="row">
+            {% for a in object_list %}
+          <div class="col-md-12 newslist">
+            <div class="row">
+              <div class="col-md-6 news">
+                  <label class="datenews">{{ a.Tanggal | date:"M d, Y" }}</label><br>
+                  <h2>{{ a.Judul }}</h2>
+
+                      {{ a.Isi|safe| truncatechars:200 }}
+
+                  <span class="linknewsdetail">
+                    <a href="/berita/{{ a.Judul | slugify }}"><i class="fas fa-arrow-left"></i> <span>View Events Details</span></a>
+                  </span>  
+              </div>
+              <div class="col-md-6">
+                <div class="imgnewslist">
+                  <img src="/media/{{ a.Gambar }}">
+                </div>
+              </div>
+
+            </div>
+          </div>
+            {% endfor %}
+
+
+          <div class="col-md-12 linkbottomnews nopad">
+                  <a href="#" style="float: left;"><i class="fas fa-arrow-left"></i> <span>Previous</span></a>
+                  <a href="#" style="float: right;"> <span>Next</span>  <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   {% endblock %}
+
+
+{% block js %}
+    <script>
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+        document.getElementById("navbar").classList.add("stickynav");
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").classList.remove("stickynav");
+      }
+    }
+    </script>
+{% endblock %}

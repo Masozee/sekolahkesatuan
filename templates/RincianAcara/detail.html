@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <div class="headerabout">
+      <div class="caption">
+        <h4>LOREM IPSUM:</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur quis elit.</p>
+      </div>
+    </div>
+
+     <section class="py-4">
+      <div class="container borderspecial">
+        <div class="row">
+            <div class="col-md-4 columnspecial text-right">
+              <label class="datespecial">Sabtu, 01 Januari 2019</label>
+            </div>
+            <div class="col-md-8">
+              <h5>Lorem ipsum dolor sit amet, consectetur quis elit Lorem ipsum dolor sit amet, consectetur quis elit Lorem ipsum dolor sit amet, consectetur quis elit.</h5><br><br>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br><Br>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br><Br>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<Br><BR>
+              </p>
+              <div class="fotospecial">
+                <img src="image/gal2.jpg" class="imgspecial">
+                <span>
+                  Lorem ipsum dolor sit amet
+                </span>
+              </div><Br>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br><Br>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br><Br>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<Br><BR>
+              </p>
+
+
+            </div>
+
+        
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="mapouter">
+        <div class="gmap_canvas">
+          <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=smk%20kesatuan%20bogor&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+          </iframe>
+        </div>
+      </div>
+    </section>
+{% endblock%}
+
+{% block js %}
+    <script>
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+        document.getElementById("navbar").classList.add("stickynav");
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").classList.remove("stickynav");
+      }
+    }
+    </script>
+{% endblock %}

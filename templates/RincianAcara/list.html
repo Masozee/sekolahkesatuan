@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <div class="headerabout specialheader">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+             <div class="imgnewslist imgspecialevent">
+                <img src="image/image1.jpg">
+              </div>
+          </div>
+          <div class="col-md-9">
+             <h2>Neque porro quisquam est qui dolorem ipsum quia dolor.</h2><br>
+             <p>Lorem ipsum dolor sit amet, consectetur quis elit. Lorem ipsum dolor sit amet, consectetur quis elit. Lorem ipsum dolor sit amet, consectetur quis elit. Lorem ipsum dolor sit amet, consectetur quis elit. Lorem ipsum dolor sit amet, consectetur quis elit. Lorem ipsum dolor sit amet, consectetur quis elit. Lorem ipsum dolor sit amet, consectetur quis elit. Lorem ipsum dolor sit amet, consectetur quis elit. Lorem ipsum dolor sit amet, consectetur quis elit. Lorem ipsum dolor sit amet,consectetur quis elit.Lorem ipsum dolor sit amet, consectetur quis elit.</p>
+          </div>
+        </div>
+
+      </div>
+      <!--<div class="caption">
+        <h2>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur quis elit. Lorem ipsum dolor sit amet, consectetur quis elit. Lorem ipsum dolor sit amet, consectetur quis elit. Lorem ipsum dolor sit amet, consectetur quis elit. Lorem ipsum dolor sit amet, consectetur quis elit. Lorem ipsum dolor sit amet, consectetur quis elit.Lorem ipsum dolor sit amet, consectetur quis elit.</p>
+      </div>-->
+    </div>
+
+     <section class="py-4">
+      <div class="container nopad" style="padding-bottom: 25px;">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="timeline-centered">
+                    <article class="timeline-entry starttimeline">
+                      <div class="timeline-entry-inner">
+                      </div>
+                    </article>
+
+                    {% for a in object_list %}
+                    <article class="timeline-entry">
+                      <div class="timeline-entry-inner">
+                        <time class="timeline-time" datetime="2014-01-10T03:45"><span>{{ a.Rincian_Acara }}</span> <span>{{ a.Waktu_Mulai }}</span></time>
+                        <div class="timeline-icon">
+                          <i class="entypo-feather"></i>
+                        </div>
+                        <div class="timeline-label">
+                          <h2><a href="#">{{ a.Judul_Acara }}</a></h2>
+                          <p>{{ a.Keterangan|safe|truncatechars:300 }}</p><br>
+                           <a href="#">
+                            <span>Details</span> <i class="fas fa-arrow-right"></i> 
+                           </a>
+                        </div>
+                      </div>                 
+                    </article>
+                    {% endfor %}
+       
+                    <!--<article class="timeline-entry begin">
+                      <div class="timeline-entry-inner">
+                        <div class="timeline-icon" style="-webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg);">
+                          <i class="entypo-flight"></i>
+                        </div>
+                      </div>
+                    </article>-->
+                    
+                  </div>
+
+            </div>
+        
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
+
+ {% block js %}
+    <!-- Bootstrap core JavaScript -->
+    <script>
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+        document.getElementById("navbar").classList.add("stickynav");
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").classList.remove("stickynav");
+      }
+    }
+    </script>
+{% endblock %}

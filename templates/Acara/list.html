@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load svg %}
+
+
+{% block content %}
+    <div class="headerabout">
+      <div class="caption">
+        <h4>LOREM IPSUM:</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur quis elit.</p>
+      </div>
+    </div>
+
+     <section class="py-5">
+      <div class="container">
+        <div class="row">
+            {% for a in object_list %}
+          <div class="col-md-12 newslist">
+            <div class="row">
+              <div class="col-md-1 eventcolumndate">
+                <h5>NOV</h5>
+                <span class="borderevent"></span><br>
+                <h1>29</h1>
+              </div>
+              <div class="col-md-5 text-center">
+                <div class="imgnewslist imgeventlist">
+                  <img src="/media/{{ a.Foto }}">
+                </div>
+              </div>
+              <div class="col-md-6 news">
+                  <h2>{{ a.Nama_Acara }}</h2>
+                  <label class="datenews">{{ a.Waktu_Mulai }}</label>
+                  
+                     {{ a.Keterangan |safe|truncatechars:300 }}
+        
+                  <span class="linknewsdetail">
+                    <a href="/acara/{{ a.Nama_Acara | slugify }}" style="width: 20px; height: auto"><span>View Events Details</span></a>
+                  </span>  
+              </div>
+              
+            </div>
+          </div>
+            {% endfor %}
+
+            </div>
+          </div>
+         
+          <div class="col-md-12 linkbottomnews nopad">
+                  <a href="#" style="float: left;"><i class="fas fa-arrow-left"></i> <span>Previous</span></a>
+                  <a href="#" style="float: right;"> <span>Next</span></a>
+          </div>
+
+
+   {% endblock %}
+
+ {% block js %}
+
+    <script>
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+        document.getElementById("navbar").classList.add("stickynav");
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").classList.remove("stickynav");
+      }
+    }
+    </script>
+  {% endblock %}
+
